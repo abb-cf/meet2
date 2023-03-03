@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/abb-cf/meet2/issues"
   },
-  "homepage": "https://github.com/abb-cf/meet2#readme"
+  "homepage": "https://github.com/abb-cf/meet2#readme",
+  "dependencies": {
+    "googleapis": "^59.0.0"
+  }
 }

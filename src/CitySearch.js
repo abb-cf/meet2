@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { mockData } from './mock-data';
-import { extractLocations } from './api';
+// import { mockData } from './mock-data';
+// import { extractLocations } from './api';
 
 class CitySearch extends Component {
     state = {
@@ -11,18 +11,29 @@ class CitySearch extends Component {
 
     handleInputChanged = (event) => {
         const value = event.target.value;
-        const locations = extractLocations(mockData);
+        this.setState({ showSuggestions: true });
+        // const locations = extractLocations(mockData);
         const suggestions = this.props.locations.filter((location) => {
             return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
         });
+
+        if (suggestions.length === 0) {
         this.setState({ 
             query: value,
             suggestions, });
-    }
+
+        } else {
+            return this.setState({
+                query: value,
+                suggestions: suggestions,
+            });
+        }
+    };
 
     handleItemClicked = (suggestion) => {
         this.setState({
             query: suggestion,
+            suggestions: [],
             showSuggestions: false,
         });
 
@@ -35,11 +46,13 @@ class CitySearch extends Component {
             <input
                 type="text"
                 className="city"
+                placeholder="Search"
                 value={this.state.query}
                 onChange={this.handleInputChanged}
                 onFocus={() => { this.setState({ showSuggestions: true }) }}
             />
-            <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>
+            <ul className="suggestions" 
+                style={this.state.showSuggestions ? {}: { display: 'none' }}>
                 {this.state.suggestions.map((suggestion) => (
                     <li 
                         key={suggestion}

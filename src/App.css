@@ -78,6 +78,10 @@ input[type="number"] {
   background-color: #9dd8ff;
 }
 
+.EventList {
+  flex-wrap: wrap;
+}
+
 .event {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
@@ -86,7 +90,6 @@ input[type="number"] {
   background-color: #f6d3b7;
   border-radius: 4px;
   position: relative;
-  flex-wrap: wrap;
 }
 
 .details-button {

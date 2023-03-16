@@ -2,6 +2,7 @@
 .App {
   text-align: center;
   padding: 2% 5%;
+  background-color: #ddb89b;
 }
 
 .App * {
@@ -29,6 +30,7 @@ input[type="number"] {
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
+  background: #f6ece5;
   border: 1px solid #ccc;
   font-size: 14px;
   line-height: 20px;
@@ -73,29 +75,34 @@ input[type="number"] {
 }
 
 .suggestions > li:hover {
-  background-color: #bcdcdb;
+  background-color: #9dd8ff;
 }
 
 .event {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #ccc;
+  border: 1px solid #c56e2b;
+  background-color: #f6d3b7;
   border-radius: 4px;
   position: relative;
+  flex-wrap: wrap;
 }
 
-.details-btn {
-  position: absolute;
+.details-button {
+  /* position: absolute; */
   right: 5px;
   bottom: 5px;
   padding: 5px 8px;
   border-radius: 4px;
   outline: none;
   cursor: pointer;
+  background-color:#ce6a1e;
+  color: white;
 }
 
-.name {
+.summary {
+  color: #137DC5;
   font-size: 18px;
   font-weight: 600;
 }
@@ -118,6 +125,14 @@ input[type="number"] {
   width: 200px;
   margin: 20px auto;
   text-align: center;
+}
+
+.details h3 {
+  color:#137DC5;
+}
+
+.details > a.link {
+  color:#4285f4
 }
 
 .button-wrapper {

@@ -26,4 +26,8 @@ describe('<NumberOfEvents />', () => {
     noeInput.simulate('change', {target: { value: 15 }});
     expect(NumberOfEventsWrapper.state('noe')).toBe(15);
   });
+
+  test('filter events by city', () => {
+    
+  })
 })

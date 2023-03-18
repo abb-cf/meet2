@@ -79,7 +79,14 @@ input[type="number"] {
 }
 
 .EventList {
+  display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.EventList>* {
+  flex: 1 1 300px;
 }
 
 .event {
@@ -216,7 +223,7 @@ input[type="number"] {
   font-family: "Roboto";
 }
 
-
+.event:hover { background-color: #fbe9da; }
 
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {

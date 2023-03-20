@@ -3,9 +3,9 @@ import puppeteer from 'puppeteer';
 describe('show/hide an event details', () => {
     let browser;
     let page;
+    jest.setTimeout(100000);
     beforeAll(async () => {
-      jest.setTimeout(100000);
-      const browser = await puppeteer.launch({
+      browser = await puppeteer.launch({
         headless: false,
         slowMo: 250, // slow down by 250ms
         ignoreDefaultArgs: ['--disable-extensions'] // ignores default setting that causes timeout errors

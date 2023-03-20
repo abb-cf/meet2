@@ -14,7 +14,7 @@ class Event extends Component {
     const { collapsed } = this.state;
 
     return (
-      <div className="event">
+      <div className={`event ${this.state.collapsed ? '' : 'expanded'}`}>
         <h2 className="summary">{ event.summary }</h2>
         <p className="start">
           { event.start.dateTime }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from '../App';
+// import App from '../App';
 import NumberOfEvents from '../NumberOfEvents';
 
 describe('<NumberOfEvents />', () => {
@@ -28,6 +28,6 @@ describe('<NumberOfEvents />', () => {
   });
 
   test('filter events by city', () => {
-    
+
   })
 })

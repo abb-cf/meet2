@@ -21,6 +21,10 @@ class App extends Component {
   };
 
   async componentDidMount() {
+    window.addEventListener('online', this.networkStatus);
+    window.addEventListener('offline', this.networkStatus);
+    this.networkStatus();
+    
     this.mounted = true;
     getEvents().then(events => {
       if (this.mounted) {
@@ -28,10 +32,6 @@ class App extends Component {
         this.setState({ events, locations: extractLocations(events) });
       }
     });
-    
-    window.addEventListener('online', this.networkStatus);
-    window.addEventListener('offline', this.networkStatus);
-    this.networkStatus();
   }
 
   componentWillUnmount(){ this.mounted = false; }
@@ -77,7 +77,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div>
         <InfoAlert text={this.infoText}/>
+        </div>
         <div className="filter-box">
           <CitySearch
             locations={this.state.locations}

@@ -51,8 +51,13 @@ import NProgress from 'nprogress';
         return mockData;
     }
 
-  const token = await getAccessToken();
+    if (!navigator.online) {
+      const data = localStorage.getItem("lastEvents");
+      NProgress.done();
+      return data ? JSON.parse(data).events: [];
+    }
 
+  const token = await getAccessToken();
   if (token) {
       removeQuery();
       const url = 'https://v1jy7iylfd.execute-api.us-east-1.amazonaws.com/dev/api/get-events' + '/' + token;

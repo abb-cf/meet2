@@ -5,14 +5,20 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents, extractLocations } from './api';
 import './nprogress.css';
+import { InfoAlert } from './Alert';
 
 class App extends Component {
   state ={
     events: [],
     locations: [],
     seletedLocation: 'all',
-    eventCount: 32
+    eventCount: 32,
+    infoText: ''
   }
+
+  networkStatus = () => {
+    this.setState({infoText: navigator.online ? 'online' : 'offline'})
+  };
 
   async componentDidMount() {
     this.mounted = true;
@@ -22,6 +28,10 @@ class App extends Component {
         this.setState({ events, locations: extractLocations(events) });
       }
     });
+    
+    window.addEventListener('online', this.networkStatus);
+    window.addEventListener('offline', this.networkStatus);
+    this.networkStatus();
   }
 
   componentWillUnmount(){ this.mounted = false; }
@@ -51,6 +61,7 @@ class App extends Component {
         });
       })
     }
+
   }
 
   getData = () => {
@@ -58,7 +69,7 @@ class App extends Component {
     const data = locations.map((location)=>{
       const number = events.filter((event) => event.location === location).length;
       const city = location.split(', ').shift();
-      return {city, number};
+      return { city, number };
     })
     return data;
   };
@@ -66,6 +77,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <InfoAlert text={this.infoText}/>
         <div className="filter-box">
           <CitySearch
             locations={this.state.locations}

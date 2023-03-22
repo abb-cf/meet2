@@ -13,7 +13,6 @@ class App extends Component {
     locations: [],
     seletedLocation: 'all',
     eventCount: 32,
-    infoText: ''
   }
 
   networkStatus = () => {
@@ -21,10 +20,6 @@ class App extends Component {
   };
 
   async componentDidMount() {
-    window.addEventListener('online', this.networkStatus);
-    window.addEventListener('offline', this.networkStatus);
-    this.networkStatus();
-    
     this.mounted = true;
     getEvents().then(events => {
       if (this.mounted) {
@@ -77,9 +72,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>
-        <InfoAlert text={this.infoText}/>
-        </div>
         <div className="filter-box">
           <CitySearch
             locations={this.state.locations}

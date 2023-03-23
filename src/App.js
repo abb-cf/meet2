@@ -6,7 +6,7 @@ import NumberOfEvents from './NumberOfEvents';
 import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import './nprogress.css';
 import AlertBar from './AlertBar';
-import WelcomeScreen from '/WelcomeScreen';
+import WelcomeScreen from './WelcomeScreen';
 
 class App extends Component {
   state ={

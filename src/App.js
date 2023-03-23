@@ -5,7 +5,7 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents, extractLocations } from './api';
 import './nprogress.css';
-import { InfoAlert } from './Alert';
+import AlertBar from './AlertBar';
 
 class App extends Component {
   state ={
@@ -72,6 +72,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <AlertBar />
         <div className="filter-box">
           <CitySearch
             locations={this.state.locations}

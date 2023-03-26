@@ -3,7 +3,11 @@
     width: 100%;
     height: 100%;
     top: 0;
-    background: white;
+    background: #f6d3b7;
+}
+
+.WelcomeScreen h1 {
+    color: #137DC5;
 }
 
 .login-button {
@@ -19,24 +23,26 @@
 }
 
 .google-btn {
-    width: 184px;
+    width: 160px;
     height: 42px;
     margin: 1rem;
-    background-color: #4285f4;
+    background-color: #ef954b;
     border-radius: 2px;
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+    margin-top: 80px;
+    align-items: center;
 }
     
 .google-btn:hover {
-    box-shadow: 0 0 6px #4285f4;
+    box-shadow: 0 0 6px #ef954b;
 }
 
 .google-btn:active {
-    background: #1669f2;
+    background: #ef954b;
 }
     
 .google-icon-wrapper {
-    position: absolute;
+    position: sticky;
     margin-top: 1px;
     margin-left: 1px;
     width: 40px;
@@ -46,11 +52,11 @@
 }
     
 .google-icon {
-    position: absolute;
-    margin-top: 11px;
-    margin-left: -8px;
-    width: 18px;
-    height: 18px;
+    position:relative;
+    margin: 50px 0 0 100px;
+    width: 500px;
+    height: 500px;
+
 }
     
 .btn-text {
@@ -59,8 +65,29 @@
     font-size: 14px;
     letter-spacing: 0.2px;
     font-family: "Roboto";
-    background-color: #4285f4;
+    background-color: #ef852e;
     width: 80%;
     height: 100%;
     text-align: center;
+    align-items: center;
+    }
+
+@media (max-width: 480px) {
+    .WelcomeScreen {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        background: #f6d3b7;
+    }
+    
+    .WelcomeScreen h1 {
+        color: #137DC5;
+        font-size: 50px;
+    }
+    
+    .google-icon {
+        width: 300px;
+        height: 300px;
+    }
 }

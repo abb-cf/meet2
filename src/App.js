@@ -15,6 +15,7 @@ class App extends Component {
     seletedLocation: 'all',
     eventCount: 32,
     showWelcomeScreen: undefined,
+    infoTex: '',
   }
 
   networkStatus = () => {
@@ -37,15 +38,17 @@ class App extends Component {
     }
   }
 
-  componentWillUnmount(){ this.mounted = false; }
+  componentWillUnmount() { 
+    this.mounted = false; 
+  }
 
   updateEvents = (location, inputNumber) => {
     const {eventCount, seletedLocation} = this.state;
     if (location) {
       getEvents().then(events => {
-        const locationEvents = (location === 'all') ?
-        events :
-        events.filter(event => event.location === location);
+        const locationEvents = (location === 'all') 
+        ? events 
+        : events.filter((event) => event.location === location);
         const eventsToShow=locationEvents.slice(0, eventCount);
         this.setState({
         events: eventsToShow,
@@ -57,28 +60,28 @@ class App extends Component {
         const locationEvents = (seletedLocation === 'all') ?
         events :
         events.filter((event) => event.location === seletedLocation);
-        const eventsToShow=locationEvents.slice(0, inputNumber);
+        const eventsToShow = locationEvents.slice(0, inputNumber);
         this.setState({
           events: eventsToShow,
           eventCount: inputNumber
         });
-      })
+      });
     }
-
-  }
+  };
 
   getData = () => {
-    const {locations, events} = this.state;
-    const data = locations.map((location)=>{
+    const { locations, events } = this.state;
+    const data = locations.map((location) => {
       const number = events.filter((event) => event.location === location).length;
       const city = location.split(', ').shift();
       return { city, number };
-    })
+    });
     return data;
   };
 
   render() {
-    if (this.state.showWelcomeScreen === undefined) return <div className="App" />
+    if (this.state.showWelcomeScreen === undefined) 
+      return <div className="App" />
 
     return (
       <div className="App">
@@ -94,7 +97,9 @@ class App extends Component {
           />
         </div>
         <EventList events={this.state.events} />
-        <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
+        <WelcomeScreen 
+          showWelcomeScreen={this.state.showWelcomeScreen} 
+          getAccessToken={() => { getAccessToken(); }} />
       </div>
     );
   }

@@ -21,7 +21,7 @@ class AlertBar extends Component {
             <InfoAlert text={this.state.infoText} />
           </div>
           <div className="title">
-            <h1>MEET&nbsp;</h1>
+            <h1>MEET&nbsp;APP</h1>
           </div>
         </div>
       );

@@ -5,7 +5,7 @@ class AlertBar extends Component {
     state = { infoText: ''}
 
     networkStatus = () => {
-        this.setState({infoText: navigator.online ? 'online' : 'offline'})
+        this.setState({infoText: navigator.onLine ? 'online' : 'offline'})
     };
   
     async componentDidMount() {

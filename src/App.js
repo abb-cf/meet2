@@ -7,6 +7,7 @@ import { getEvents, extractLocations, checkToken, getAccessToken } from './api';
 import './nprogress.css';
 import AlertBar from './AlertBar';
 import WelcomeScreen from './WelcomeScreen';
+import EventGenre from './EventGenre';
 import {
   ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
@@ -101,7 +102,9 @@ class App extends Component {
           />
         </div>
         <h4>Events in each city</h4>
-        
+        <div className="data-vis-wrapper">
+          <EventGenre events={events} />
+        </div>
         <ResponsiveContainer height={400} >
           <ScatterChart
             margin={{

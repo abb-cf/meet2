@@ -84,7 +84,7 @@ class App extends Component {
     if (this.state.showWelcomeScreen === undefined) 
       return <div className="App" />
 
-    const { locations, eventCount } = this.state;
+    const { locations, eventCount, events } = this.state;
 
     return (
       <div className="App">
@@ -101,6 +101,7 @@ class App extends Component {
           />
         </div>
         <h4>Events in each city</h4>
+        
         <ResponsiveContainer height={400} >
           <ScatterChart
             margin={{
@@ -116,7 +117,7 @@ class App extends Component {
           </ScatterChart>
         </ResponsiveContainer>
 
-        <EventList events={this.state.events} 
+        <EventList events={events} 
         />
         <WelcomeScreen 
           showWelcomeScreen={this.state.showWelcomeScreen} 

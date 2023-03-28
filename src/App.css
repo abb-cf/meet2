@@ -42,6 +42,20 @@ input[type="number"] {
   width: 250px;
 }
 
+.Alert {
+  margin-top: 0;
+  padding: .25em 0 0;
+  background: linear-gradient(90deg, var(--white-alpha), transparent);
+}
+
+.AlertBar {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  border-bottom: 1.1px solid var(--gray50);
+  background: var(--bg);
+}
+
 .CitySearch {
   display: flex;
   flex-direction: column;
@@ -49,6 +63,22 @@ input[type="number"] {
   max-width: 300px;
   margin: auto;
   position: relative;
+}
+
+.CitySearch > .utilities {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 10em;
+  height: 100%;
+  z-index: 101;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .suggestions {

@@ -5,12 +5,12 @@ class AlertBar extends Component {
     state = { infoText: ''}
 
     networkStatus = () => {
-        this.setState({infoText: navigator.onLine ? 'online' : 'offline'})
+        this.setState({infoText: navigator.onLine ? '' : 'Meet can be used offline, but events may not be updated'})
     };
   
     async componentDidMount() {
-      window.addEventListener('online', this.networkStatus);
-      window.addEventListener('offline', this.networkStatus);
+      window.addEventListener('', this.networkStatus);
+      window.addEventListener('Meet can be used offline, but events may not be updated', this.networkStatus);
       this.networkStatus();
     }
   

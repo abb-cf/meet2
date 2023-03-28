@@ -10,19 +10,18 @@ function WelcomeScreen(props) {
         Log in to see upcoming events around the world <br />
         for full-stack developers
     </h5>
-    <div className="button_cont" align="center">
-        <div class="google-btn">
+        <div className="google-btn">
             {/* <div class="google-icon-wrapper"> */}
             
             {/* </div> */}
             <button onClick={() => { props.getAccessToken() }}
                 rel="nofollow noopener"
-                class="btn-text"
+                className="btn-text"
             >
                 <b>Sign in with Google</b>
             </button>
         </div>
-    </div>
+        <br />
         <a
             href="https://abb-cf.github.io/meet2/privacy.html"
             rel="nofollow noopener"
@@ -31,7 +30,7 @@ function WelcomeScreen(props) {
         </a>
         <footer>
         <img
-            class="google-icon"
+            className="google-icon"
             align="left"
             src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
             alt="Google sign-in" />

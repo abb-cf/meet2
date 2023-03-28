@@ -46,7 +46,7 @@ class CitySearch extends Component {
     return (
       <div className="CitySearch">
         <div>
-            <div className="CitySearch-alert" margin="10px" >
+            <div className="CitySearch-alert" margin-top="40px"  >
                 <InfoAlert text={this.state.infoText} />
             </ div>
             <h4>Choose your nearest city</h4>

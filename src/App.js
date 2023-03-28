@@ -91,7 +91,6 @@ class App extends Component {
       <div className="App">
         <AlertBar />
         <div className="filter-box">
-          <h4>Choose your nearest city</h4>
           <CitySearch
             locations={locations}
             updateEvents= {this.updateEvents}
